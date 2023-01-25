@@ -1,6 +1,18 @@
 
 console.log('Was loaded');
 
+/*
+function waitSync(milliSeconds) {
+    milliSeconds += new Date().getTime();
+    while (new Date() < milliSeconds){}
+}
+
+waitSync(10000)
+console.log('time elapsed')
+
+const wait = (milliSeconds) => return new Promise((resolve, reject)=> setTimeout(resolve, milliSeconds))
+*/
+
 const btnShow = document.querySelector('#btnShow');
 const btnElement = document.querySelector("button")
 
@@ -19,6 +31,24 @@ btnShow.addEventListener('click', handleClick);
 
 
 
+const loginForm = document.querySelector('#loginForm')
+
+function handleSubmit(event){
+    const formData = new FormData(loginForm);
+    const userName = formData.get('username');
+    const errorUsername = document.querySelector('#errorUsername');
+    console.log(userName);
+
+    if(userName.indexOf('@') < 0){
+        errorUsername.classList.remove('hidden')
+    }
+else{
+    errorUsername.classList.add('hidden');
+    }
+    event.preventDefault();
+}
+
+loginForm.addEventListener('submit', handleSubmit);
 
 
 //btnShow.addEventListener('mousedown', handleClick);
@@ -38,3 +68,6 @@ btnShow.addEventListener('click', handleClick);
 //bodyElement.classList.toggle('color1');
 
 //h1Element.classList.toggle('color2');
+
+
+
