@@ -1,0 +1,105 @@
+html{
+    background-color: #202020;
+    color: #c9c9c9;
+}
+
+.gridGen{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);;
+    grid-template-rows: repeat(8, 5rem);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
+}
+
+/******* nicht extra grid und flex parent, beides in ein parent ********/
+
+.menu{
+    border: #ff5fd3 solid 1px;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin: 1rem;
+}
+.divConMenu{
+    align-items: center;
+    align-content: center;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin: 1rem;
+}
+.items{
+
+}
+
+
+
+.main{
+    border: #5fffec solid 1px;
+    grid-row-start: 2;
+    grid-row-end: 8;
+    grid-column-start: 1;
+    grid-column-end: 9;
+}
+.divConMain{
+    display:flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    gap: 0.5rem;
+    justify-content: stretch;
+}
+.mainitems{
+    margin: 0.5rem;
+    height: 3rem;
+    width: 6rem;
+    background-color: #c9c9c9;
+}
+
+
+
+.side1{
+    border: #ff361a solid 1px;
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start: 9;
+    grid-column-end: 13;
+}
+.divConSide1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.side1items{
+    height: 7rem;
+    width: 8rem;
+    border: #c9c9c9 solid 1px;
+    background-color: #c9c9c9;
+
+}
+
+
+
+.side2{
+    border: #39ff1a solid 1px;
+    grid-row-start: 5;
+    grid-row-end: 8;
+    grid-column-start: 9;
+    grid-column-end: 13;
+}
+.divConSide2{
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+    gap: 3rem;
+}
+.side2items{
+    height: 4rem;
+    width: 12rem;
+    background-color: #c9c9c9;
+}

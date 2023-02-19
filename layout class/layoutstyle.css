@@ -1,0 +1,99 @@
+html{
+    background-color: #202020;
+    color: #c9c9c9;
+}
+.margT{
+    margin-top: 5rem;
+}
+/*https://flexboxfroggy.com/#de*/
+/********************************************************************* BoxModel *********************************************************************/
+/*
+Standard behavior of Html, Css, everything has the expanding box anyway how big the content is.
+Images are not screen-filling boxed (inline).
+If to inline Items can fit next to each other, they will be placed next to each other.
+If there is a box element and a inline element, they'll go underneath since the box-element tries to fill the screen.
+Inline Obj: Img, span, video.
+Flex and Grid just helps us to layout boxes.
+*/
+
+
+
+/********************************************************************** FlexBox **********************************************************************/
+/*
+Container and Items.
+Wrap the Items in an container (div for example)
+*/
+p{
+    border: red solid 1px;
+    margin: 0.3rem;
+}
+.flexContainer{
+    border: blue solid 1px;
+    display: flex;
+    /* flex-direction: row | flex-direction: row-reverse | flex-direction: column | flex-direction: column-reverse
+    Row is default */
+    flex-wrap: wrap;    /* if the items overflow you can use wrap to to fit the content */
+    justify-content: space-evenly; /*"Layout" the items*/
+    align-items: baseline;
+}
+/* order number 0 for every item by default*/
+.alignExample{
+    padding: 1rem;
+}
+.special{
+    color: #ff5fd3;
+    order: -1;
+}
+.special2{
+    color: aqua;
+    order: 1;
+}
+.special3{
+    color: chartreuse;
+}
+.grow{
+    flex-grow: 1; /* fills up free space*/
+    border: blueviolet solid 1px;
+}
+/************************************************************************ Grid ************************************************************************/
+/*
+2 dimensional version, working with row and column.
+*/
+
+.gridContainer{
+    display: grid; /*from here on we have to define the grid*/
+    /*grid-template-columns: 50%  50%;*/ /*two columns which each take 50% of the screen*/
+    grid-template-rows: 5rem 10rem 5rem; /*three rows with two 5rem size and the middle 10rem*/
+    /*we can also repeat - grid-template-rows: repeat(10, 5rem) - which repeats the row 10 time with 5rem*/
+    /*grid-template-columns: repeat(12, 50%); - 12 columns with 50% screensize*/
+    /*"fr" as size unit to flex the screen*/
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 1rem;
+
+    /*we can also give it an area and roles
+    grid-template-ares:
+    "header header header header header header" (6 rows of header)
+    "main main main . side side" (3 rows of main, 1 empty and 2 sides)
+    ". . . . footer footer" (4 empty, 2 footer)
+    then we can give items to the area.
+    .item1{
+    grid-area: header;
+    }
+    so we would have item1 over the six rows of header.
+    */
+}
+.overlayingItem{
+    border: #ff5fd3 solid 1px;
+    color: aqua;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.specialGridItem{
+    border: aquamarine solid 1px;
+    color: #ff5fd3;
+    grid-column: 6 / span 11;
+}
+.centerItem{
+    justify-self: stretch;
+    border: #c9c9c9 dotted 1px;
+}

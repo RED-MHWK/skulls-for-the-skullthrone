@@ -12,3 +12,27 @@ html, body {
 .hidden{
     display: none;
 }
+
+.style1{
+    list-style-type: none;
+}
+.style1li {
+    padding: .5rem;
+    margin: .25rem;
+    border: 1px dotted transparent;
+    cursor: pointer;
+}
+
+.style1li:hover {
+    color: #ff5fd3;
+}
+
+.highlight{
+    border: 1px solid #ff5fd3;
+}
+.liHigh{
+    color: #ff5fd3;
+}
+.nope{
+    background-color: aqua;
+}
