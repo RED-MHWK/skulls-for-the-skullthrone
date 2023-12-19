@@ -1,4 +1,3 @@
 # skulls-for-the-skullthrone
 ## and blood for the bloodgod
-### c:
-this is going to be my notes repo from now on.
+just some notes from classes semster 1
